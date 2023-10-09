@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Shopping Website</title>
+    <style>
+        /* Add your styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        main {
+            padding: 2em;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .products-button {
+            padding: 15px 30px;
+            font-size: 1.5em;
+            background-color: #3f9f3a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .products-button:hover {
+            background-color: #4cc6bc;
+        }
+        .product-button a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Your Brand Name</h1>
+        <p>Your One-Stop Shop for Your Product Category</p>
+    </header>
+
+    <main>
+        <div style="text-align: center;">
+        
+            <button class="products-button"><a href="{% url 'product_list' %}">View Products</a></button>
+        </div>
+
+
+
+        <section>
+            <h2>Featured Products</h2>
+            <!-- Showcase a few high-quality, popular products here -->
+        </section>
+
+        <section>
+            <h2>Special Offers</h2>
+            <!-- Highlight ongoing promotions, discounts, or limited-time offers -->
+        </section>
+
+        <section>
+            <h2>Shop by Category</h2>
+            <!-- Visual sections for different product categories -->
+        </section>
+
+
+       <section>
+            <h2>Stay Connected</h2>
+            <!-- Encourage visitors to follow on social media or subscribe to newsletters -->
+        </section>
+
+        <section>
+            <h2>Featured Brands</h2>
+            <!-- Showcase top brands with images and links -->
+        </section>
+
+    </main>
+
+    <footer>
+        <nav>
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Shipping & Returns</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+        </nav>
+    </footer>
+</body>
+
+</html>
