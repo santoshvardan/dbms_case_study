@@ -1,0 +1,50 @@
+To create an Entity-Relationship (ER) diagram and relational schema for an online shopping website, we'll define a basic structure with entities like Product, Category, and Customer. Let's also include relationships such as "Product belongs to a Category" and "Customer makes a Purchase". The schema will use a simplified notation.
+
+Entity-Relationship (ER) Diagram:
+
+  +-----------+   belongs to    +-----------+
+  |           |<--------------| |           |
+  |  Product  |               | | Category  |
+  |           |--------------->|           |
+  +-----------+   has many     +-----------+
+           |                        |
+           | makes a                | contains
+           |                        |
+  +--------|--------+   +-----------|-----------+
+  |                 |   |                       |
+  |    Purchase     |   |       Customer        |
+  |                 |   |                       |
+  +-----------------+   +-----------------------+
+In this ER diagram:
+
+Product has a many-to-one relationship with Category as a product belongs to a category.
+Customer has a one-to-many relationship with Purchase as a customer can make many purchases.
+Product and Category have a many-to-many relationship.
+Relational Schema:
+Based on the ER diagram, we can derive a relational schema.
+
+Product:
+
+ProductID (PK)
+ProductName
+Description
+Price
+Category:
+
+CategoryID (PK)
+CategoryName
+Customer:
+
+CustomerID (PK)
+FirstName
+LastName
+Email
+Purchase:
+
+PurchaseID (PK)
+ProductID (FK)
+CustomerID (FK)
+PurchaseDate
+The foreign keys (FK) in the Purchase table reference the primary keys (PK) of the Product and Customer tables, establishing the relationships.
+
+This is a simple representation and might not cover all aspects of a real-world online shopping system. Adjust and expand the schema based on the specific requirements and functionalities of your application.
