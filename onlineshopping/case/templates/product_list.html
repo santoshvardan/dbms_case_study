@@ -2,16 +2,72 @@
 <html>
 <head>
     <title>Product List</title>
+    <style>
+  body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .product-card {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 10px;
+            width: 250px;
+            float: left;
+            box-sizing: border-box;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .product-card h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .product-card p {
+            font-size: 0.9em;
+            margin: 0;
+            margin-bottom: 5px;
+        }
+
+        .product-card a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .product-card a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <h1>Products</h1>
-    <ul>
+
         {% for product in products %}
-            <li>
-                <a href="/products/{{ product.id }}/">{{ product.name }}</a> - ${{ product.price }}
-            </li>
-        {% endfor %}
-    </ul>
+        <div class="product-card">
+            <h3><a href="/products/{{ product.id }}/">{{ product.name }}</a></h3>
+            <p>Description: {{ product.description }}</p>
+            <p>Price: ${{ product.price }}</p>
+            <p>Category: {{ product.category.name }}</p>
+        </div>
+    {% endfor %} 
 </body>
 </html>
 
